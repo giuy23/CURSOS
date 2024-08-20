@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+
+  <script lang="ts">
+    
+    const nombres = ["pedro", "maría", "jorge", 'Alex', "Martín"];
+    /** pop -> elimina el último elemento de una array
+     * devuelve el elemento que se borró
+     * */
+    // let resultado = nombres.pop();
+
+
+    /** shift -> elimina el primer elemento de una array
+     * devuelve el elemento que se borró
+     * */
+    // let resultado = nombres.shift();
+
+
+    /** push -> agrega el elemento al final array
+     * devuelve la cantidad de elementos
+     * */
+    // let resultado = nombres.push("Juan");
+
+
+    /** reverse -> invierte el orden del array* */
+    // let resultado = nombres.reverse();
+
+
+    /** unshift -> agrega los elementos al inicio del array
+     * devuelve la nueva longitud del array
+     * * */
+    // let resultado = nombres.unshift("Paco", "Manuel");
+
+
+    /** sort -> ordena alfabeticamente el array
+     * devuelve el array ordenado
+     * modifica el array original
+     * * */
+    // let resultado = nombres.sort();
+
+
+    /** write -> elimina la cantidad de elementos que se indica
+     * devuelve los valores eliminados
+     * modifica el array original
+     * * */
+    // let resultado = nombres.splice(-1,1, "Diego", "Alex", "Cristina");
+
+
+    /** join -> convierte el array en string y se separa con lo que le indiques
+     * devuelve un string
+     * NO modifica el array original
+     * * */
+    // let resultado = nombres.join(" ._. ");
+
+
+    /** slice -> devuelve la cantidad de elementos que se le indique en los parámetro
+     * devuelve número de elementos
+     * NO modifica el array original
+     * * */
+    // let resultado = nombres.slice(1,2);
+    
+    
+    /** filter -> recorre el array y en cada interación toma una posición del array* * */
+    const resultado = nombres.filter((nombre,i) => {
+      return nombre.length > 5
+      // document.write(nombre + " - " + i + "<br>")
+    });
+
+    document.write(resultado);
+    document.write("<hr>");
+    document.write(nombres);
+  </script>
+</html>

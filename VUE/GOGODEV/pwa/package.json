@@ -1,0 +1,25 @@
+{
+  "name": "pwa",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@vue/cli-plugin-pwa": "^5.0.8",
+    "http-server": "^14.1.1",
+    "pwa": "^1.9.7"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
+    "@vue/compiler-sfc": "^3.4.19",
+    "typescript": "^5.2.2",
+    "vite": "^5.1.4",
+    "vite-plugin-pwa": "^0.19.0",
+    "vue": "^3.4.19",
+    "vue-tsc": "^1.8.27"
+  }
+}
