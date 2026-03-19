@@ -1,0 +1,13 @@
+.filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 200px);
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  font-weight: bold;
+}
+
+.filters > div {
+  display: flex;
+  gap: 1rem;
+}

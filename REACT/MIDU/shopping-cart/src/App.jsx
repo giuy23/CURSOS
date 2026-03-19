@@ -1,36 +1,29 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Products } from "./components/Products";
+import { Header } from "./components/Header";
+import { useProducts } from "./hooks/useProducts";
+import { Footer } from "./components/Footer";
+import { useFilters } from "./hooks/useFilters";
+import { Cart } from "./components/Cart";
 
 function App() {
-  const [products, setProducts] = useState([]);
-  const [filters, setFilters] = useState({
-    category: "all",
-    minPrice: 0,
-  });
+  const { filterProducts } = useFilters();
+  const { products, getProducts } = useProducts();
 
   useEffect(() => {
-    const getProducts = async () => {
-      const res = await fetch("https://dummyjson.com/products");
-      const { products } = await res.json();
-
-      setProducts(products);
-    };
-
     getProducts();
   }, []);
 
-  const filterProducts = ({products}) => {
-    return products.filter((product) => {
-      return (
-        product.price >= filters.minPrice &&
-        (filters.category === "all" || product.category === filters.category)
-      );
-    });
-  };
+  const filteredProducts = filterProducts({ products });
 
-  const filteredProducts = filterProducts({products})
-
-  return <>{products && <Products products={filteredProducts} />}</>;
+  return (
+    <>
+      <Header />
+      {products && <Products products={filteredProducts} />}
+      <Footer />
+      <Cart />
+    </>
+  );
 }
 
 export default App;
